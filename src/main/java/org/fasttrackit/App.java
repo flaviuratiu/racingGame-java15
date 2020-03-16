@@ -35,6 +35,11 @@ public class App {
 //
 //        System.out.println("Welcome to the racing game!");
 //
+
+        new Car();
+
+        Car car = new Car();
+
         Engine engine1 = new Engine();
         engine1.manufacturer = "VW";
         engine1.capacity = 2000;
