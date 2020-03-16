@@ -22,7 +22,11 @@ public class App {
 
         System.out.println("Welcome to the racing game!");
 
-        Car carReference = new Car();
+        Engine engine1 = new Engine();
+        engine1.manufacturer = "VW";
+        engine1.capacity = 2000;
+
+        Car carReference = new Car(engine1);
         carReference.name = "Audi";
         carReference.color = "red";
         carReference.maxSpeed = 260;
@@ -33,12 +37,6 @@ public class App {
 //        carReference.engine =  new Engine();
 //        carReference.engine.manufacturer = "VW";
 //        carReference.engine.capacity = 2000;
-
-        Engine engine1 = new Engine();
-        engine1.manufacturer = "VW";
-        engine1.capacity = 2000;
-
-        carReference.engine = engine1;
 
         double currentDistance = carReference.accelerate(60, 1);
         System.out.println("Current distance: " + currentDistance);
@@ -73,7 +71,7 @@ public class App {
 
         System.out.println(carReference.name);
 
-        Car car2 = new Car();
+        Car car2 = new Car(new Engine());
         car2.name = "Lambourghini";
         car2.damaged = true;
 
