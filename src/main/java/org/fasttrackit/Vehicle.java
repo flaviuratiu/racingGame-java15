@@ -75,6 +75,11 @@ public class Vehicle {
         System.out.println("This is just a demo method");
     }
 
+    // co-variant return type
+    protected Vehicle clone() {
+        return new Vehicle();
+    }
+
     public int getRacingNumber() {
         return racingNumber;
     }
@@ -142,5 +147,19 @@ public class Vehicle {
     // read-only property
     public static int getTotalVehicleCount() {
         return totalVehicleCount;
+    }
+
+    @Override
+    public String toString() {
+        return "Vehicle{" +
+                "racingNumber=" + racingNumber +
+                ", name='" + name + '\'' +
+                ", maxSpeed=" + maxSpeed +
+                ", mileage=" + mileage +
+                ", color='" + color + '\'' +
+                ", fuelLevel=" + fuelLevel +
+                ", totalDistance=" + totalDistance +
+                ", password=" + damaged +
+                '}';
     }
 }
