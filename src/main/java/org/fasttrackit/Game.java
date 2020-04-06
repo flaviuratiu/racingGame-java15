@@ -1,5 +1,8 @@
 package org.fasttrackit;
 
+
+import org.fasttrackit.utils.ScannerUtils;
+
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
@@ -101,8 +104,7 @@ public class Game {
         System.out.println("Please select a track.");
 
         try {
-            Scanner scanner = new Scanner(System.in);
-            int trackNumber = scanner.nextInt();
+            int trackNumber = ScannerUtils.nextSingleInt();
             return tracks[trackNumber - 1];
         } catch (InputMismatchException e) {
             throw new Exception("Please enter a number.");
@@ -115,22 +117,19 @@ public class Game {
 
     private String getVehicleNameFromUser() {
         System.out.println("Please enter vehicle name:");
-        Scanner scanner = new Scanner(System.in);
-        return scanner.nextLine();
+        return ScannerUtils.nextLine();
     }
 
     private int getPlayerCountFromUser() {
         System.out.println("Please enter number of players:");
-        Scanner scanner = new Scanner(System.in);
-        return scanner.nextInt();
+        return ScannerUtils.nextSingleInt();
     }
 
     private double getAccelerationSpeedFromUser() {
         System.out.println("Please enter acceleration speed:");
-        Scanner scanner = new Scanner(System.in);
 
         try {
-            return scanner.nextDouble();
+            return ScannerUtils.nextSingleDouble();
         } catch (InputMismatchException e) {
             System.out.println("You have entered an invalid value. Please try again.");
             // recursion
